@@ -9,7 +9,7 @@ public class BlockFade : MonoBehaviour
     {
         if (other.CompareTag("FlashLight"))
         {
-           
+            Destroy(obj: gameObject);
             DestroyImmediate(gameObject);
         }
     }
