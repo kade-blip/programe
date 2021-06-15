@@ -6,17 +6,16 @@ using UnityEngine;
 public class FlashLight : MonoBehaviour
 {
     
-    private Light Light;
-    public float maxIntensity;
-    public float minIntensity;
-    public float intesityAmount;
+    public Light Light;
+    
+    
 
 
 
     void Start()
     {
         Light = GetComponent<Light>(); //its getting the component light 
-        
+        Light.intensity = 10f; // seting the insial intesity of the light 
     }
 
     void Update()
@@ -31,33 +30,12 @@ public class FlashLight : MonoBehaviour
         }
 
 
-        float brightness = Mathf.Clamp(10, minIntensity, maxIntensity);
-        Light.intensity = brightness * maxIntensity;
-
-        while (Light.enabled == true)
-        {
-            maxIntensity -= minIntensity;
-            Debug.Log("working");
-        }
-
+        Light.intensity -= Time.deltaTime * 0.33f; // gets the intesity of the light and decress it over time and the 0.33 is the speed it decresses at 
+       
 
     }
 
-    //*private void fixedUpdate()
-    //{
-        //float brightness = Mathf.Clamp(10, minIntensity, maxIntensity);
-        //Light.intensity = brightness * maxIntensity;
-       
-        //while(Light.enabled == true)
-        //{
-          //  maxIntensity -= minIntensity;
-        //    Debug.Log("working");
-      //  }
-       
-       
-
-        
-    //}
+   
 
 
 
