@@ -91,7 +91,7 @@ public class FlashLight : MonoBehaviour
 
     void lightIntesityStop()
     {
-        Light.intensity = Light.intensity;
+        Light.intensity = Light.intensity; // making the light cancel itself out
     }
 
 

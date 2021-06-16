@@ -7,8 +7,9 @@ public class FlashLightAngle1 : MonoBehaviour
 
     [SerializeField] private Camera mainCamera;
     [SerializeField] private LayerMask layerMask;
-
-   
+    public float rotatX;
+    public float rotatY;
+    
 
     void Update()
     {
@@ -17,7 +18,10 @@ public class FlashLightAngle1 : MonoBehaviour
         {
             Vector3 normal = (raycastHit.point- transform.position).normalized; //* this makes it so instead of going all over it goes strat to the mouse
 
-            //transform.position = raycastHit.point;
+            rotatY += Input.GetAxis("Mouse X");
+            rotatX += Input.GetAxis("Mouse Y");
+            rotatY = Mathf.Clamp(rotatY, -0f, 0f);
+            rotatX = Mathf.Clamp(rotatX, -0f, 0f);
             transform.rotation = Quaternion.FromToRotation(Vector3.forward, normal); 
         }
     }
