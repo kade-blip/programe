@@ -11,7 +11,7 @@ public class BlockFade : MonoBehaviour
     {
         if (other.CompareTag("FlashLight"))
         {
-            Destroy(gameObject);
+         
             flashLightScript.Light.intensity = 10;
           
             Debug.Log("work");
