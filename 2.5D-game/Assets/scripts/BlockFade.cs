@@ -12,7 +12,7 @@ public class BlockFade : MonoBehaviour
         if (other.CompareTag("FlashLight"))
         {
          
-            flashLightScript.Light.intensity = 10;
+            flashLightScript.Light.intensity = 10; // changes the intensity in the flash light script 
           
             Debug.Log("work");
         }

@@ -18,7 +18,7 @@ public class FlashLightAngle1 : MonoBehaviour
         {
             Vector3 normal = (raycastHit.point- transform.position).normalized; //* this makes it so instead of going all over it goes strat to the mouse
 
-            rotatY += Input.GetAxis("Mouse X");
+            rotatY += Input.GetAxis("Mouse X"); // the lines bellow this are attempts to clamp the rotatoins of the flash light 
             rotatX += Input.GetAxis("Mouse Y");
             rotatY = Mathf.Clamp(rotatY, -0f, 0f);
             rotatX = Mathf.Clamp(rotatX, -0f, 0f);

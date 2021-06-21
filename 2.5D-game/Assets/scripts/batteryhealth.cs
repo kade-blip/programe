@@ -15,8 +15,8 @@ public class batteryhealth : MonoBehaviour
 
      void Update()
     {
-        meterSlider.value = fl.Light.intensity;
-        Debug.Log(meterSlider.value);
+        meterSlider.value = fl.Light.intensity; // changes the health bar to the value of the flashlihght intesity 
+        
     }
 
 }

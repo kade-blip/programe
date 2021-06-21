@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class movement : MonoBehaviour
 {
+    
     public float speed = 5;
     private Vector3 movementVector;
 
@@ -20,7 +21,7 @@ public class movement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
     public LayerMask ladderMask;
-
+  
 
     Rigidbody rb;
 
@@ -34,8 +35,8 @@ public class movement : MonoBehaviour
     {
 
     }
-    
-   
+
+
     void Update()
     {
         movementVector = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
@@ -49,7 +50,7 @@ public class movement : MonoBehaviour
 
         rb.MovePosition(rb.position + movementVector * Time.deltaTime);
 
-        if (Input.GetKeyDown (KeyCode.W) && onGround == true)
+        if (Input.GetKeyDown(KeyCode.W) && onGround == true)
         {
             Debug.Log("Jump");
             GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, 10, 0), ForceMode.Impulse);
@@ -68,7 +69,7 @@ public class movement : MonoBehaviour
         if (onLadder)
         {
             GetComponent<Rigidbody>().useGravity = false;
-            movementVector = new Vector3(Input.GetAxis("Vertical"),0, 0);
+            movementVector = new Vector3(Input.GetAxis("Vertical"), 0, 0);
             movementVector.y *= speed;
 
             Debug.Log("hehe on ladder poggie");
@@ -86,9 +87,7 @@ public class movement : MonoBehaviour
                 rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
             }
         }
-
-
         
-
     }
+    
 }
