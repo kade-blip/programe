@@ -37,7 +37,7 @@ public class movement : MonoBehaviour
     }
 
 
-    void Update()
+    public void Update()
     {
         movementVector = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
         movementVector *= speed;

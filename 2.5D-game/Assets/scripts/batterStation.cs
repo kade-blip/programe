@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlockFade : MonoBehaviour
+public class batterStation : MonoBehaviour
 {
    public FlashLight flashLightScript;
 

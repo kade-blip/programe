@@ -63,7 +63,7 @@ public class FlashLight : MonoBehaviour
                 Light.enabled = true;
                 isOn = true;
                 
-                Debug.Log("working11");
+                
                 break;
                
             case 1:
