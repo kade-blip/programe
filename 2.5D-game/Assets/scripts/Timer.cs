@@ -27,8 +27,5 @@ public class Timer : MonoBehaviour
         textBox.text = "" + timeControle;
 
     }
-     void FixedUpdate()
-    {
-        
-    }
+   
 }

@@ -13,17 +13,24 @@ public class FlashLightAngle1 : MonoBehaviour
 
     void Update()
     {
+        LayerMask mask = LayerMask.GetMask("backDrop");
+        
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit raycastHit, float.MaxValue, layerMask))
+        if (Physics.Raycast(ray, out RaycastHit raycastHit, float.MaxValue, mask))
         {
             Vector3 normal = (raycastHit.point- transform.position).normalized; //* this makes it so instead of going all over it goes strat to the mouse
 
-            rotatY += Input.GetAxis("Mouse X"); // the lines bellow this are attempts to clamp the rotatoins of the flash light 
-            rotatX += Input.GetAxis("Mouse Y");
-            rotatY = Mathf.Clamp(rotatY, -0f, 0f);
-            rotatX = Mathf.Clamp(rotatX, -0f, 0f);
+            //rotatY += Input.GetAxis("Mouse X"); // the lines bellow this are attempts to clamp the rotatoins of the flash light 
+            //rotatX += Input.GetAxis("Mouse Y");
+           // rotatY = Mathf.Clamp(rotatY, -0f, 0f);
+          //  rotatX = Mathf.Clamp(rotatX, -0f, 0f);
+            
             transform.rotation = Quaternion.FromToRotation(Vector3.forward, normal); 
+
         }
+        
     }
 
-}    
+
+
+}

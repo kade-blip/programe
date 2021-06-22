@@ -9,7 +9,7 @@ public class FlashLight : MonoBehaviour
     public Light Light;
     bool isOn;
     private int State;
-    
+    public KeyCode Key;
     void Start()
     {
         Light = GetComponent<Light>(); //its getting the component light 
@@ -20,21 +20,21 @@ public class FlashLight : MonoBehaviour
    public void Update()
     {
         Cases();
-        if (Input.GetKeyUp(KeyCode.Space) && isOn == true) // if space isnt pressed and light on
+        if (Input.GetKeyUp(Key) && isOn == true) // if space isnt pressed and light on
         {
             State = 0;
         }
-        else if (Input.GetKeyDown(KeyCode.Space) && isOn == true) // if space is pressed and light is on
+        else if (Input.GetKeyDown(Key) && isOn == true) // if space is pressed and light is on
         {
             State = 1;
         }
 
-        else if (Input.GetKeyUp(KeyCode.Space) && isOn == false) // if space is pressed and light isnt on
+        else if (Input.GetKeyUp(Key) && isOn == false) // if space is pressed and light isnt on
         {
             State = 2;
         }
       
-        else if (Input.GetKeyDown(KeyCode.Space) && isOn == false) // if space isnt pressed and light is off
+        else if (Input.GetKeyDown(Key) && isOn == false) // if space isnt pressed and light is off
         {
             State = 3;
             
@@ -83,8 +83,12 @@ public class FlashLight : MonoBehaviour
                 break;
         }
     }
+     void FixedUpdate()
+    {
+        
+    }
 
-   void lightIntesityUpdate()
+    void lightIntesityUpdate()
     {
         Light.intensity -= Time.deltaTime * 0.33f; // gets the intesity of the light and decress it over time and the 0.33 is the speed it decresses at
     }
