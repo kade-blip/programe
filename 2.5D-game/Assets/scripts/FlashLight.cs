@@ -17,7 +17,7 @@ public class FlashLight : MonoBehaviour
         State = 0;
     }
 
-    void Update()
+   public void Update()
     {
         Cases();
         if (Input.GetKeyUp(KeyCode.Space) && isOn == true) // if space isnt pressed and light on
@@ -55,7 +55,7 @@ public class FlashLight : MonoBehaviour
 
 
     }
-    void Cases()
+     void Cases()
     {
         switch(State)
         {
